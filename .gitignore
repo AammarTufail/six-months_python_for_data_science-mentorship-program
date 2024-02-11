@@ -4,4 +4,5 @@
 ## Get latest from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 
 # User-specific directories
-# /00_projects/
+/00_projects/
+
