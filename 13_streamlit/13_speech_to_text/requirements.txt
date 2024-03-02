@@ -1,0 +1,5 @@
+streamlit
+openai
+pytube
+moviepy
+requests
