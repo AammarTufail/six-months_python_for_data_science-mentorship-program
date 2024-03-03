@@ -10,5 +10,11 @@
         <input type="text" name="prompt" placeholder="Enter a prompt for DALL·E 3" required>
         <button type="submit">Generate Image</button>
     </form>
+    {% if image_url %}
+    <div>
+        <img src="{{ image_url }}" alt="Generated Image" style="max-width: 100%; height: auto;">
+        <a href="/download-image?image_url={{ image_url }}">Download Image</a>
+    </div>
+    {% endif %}
 </body>
 </html>
