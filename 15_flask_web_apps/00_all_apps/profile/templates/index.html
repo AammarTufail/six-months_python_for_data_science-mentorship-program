@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Professional CV</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section-title {
+            background-color: #0056b3;
+            color: #fff;
+            padding: 10px;
+            margin: 0 0 20px 0;
+        }
+        .experience-item, .education-item {
+            margin-bottom: 10px;
+        }
+        .experience-title, .education-title {
+            font-weight: bold;
+        }
+        .experience-company, .education-institution {
+            font-style: italic;
+        }
+        .social-media {
+            list-style: none;
+            padding: 0;
+        }
+        .social-media li {
+            display: inline;
+            margin-right: 10px;
+        }
+        .social-media a {
+            color: #0056b3;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>{{ profile.name }}</h1>
+            <p>{{ profile.bio }}</p>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">Experience</h2>
+            {% for item in profile.experience %}
+                <div class="experience-item">
+                    <div class="experience-title">{{ item.title }}</div>
+                    <div class="experience-company">{{ item.company }}, {{ item.years }}</div>
+                    <div class="experience-description">{{ item.description }}</div>
+                </div>
+            {% endfor %}
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">Education</h2>
+            {% for item in profile.education %}
+                <div class="education-item">
+                    <div class="education-title">{{ item.degree }}</div>
+                    <div class="education-institution">{{ item.institution }}, {{ item.years }}</div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Social Media</h2>
+            <ul class="social-media">
+                {% for link in profile.social_media %}
+                    <li><a href="{{ link.url }}" target="_blank">{{ link.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
