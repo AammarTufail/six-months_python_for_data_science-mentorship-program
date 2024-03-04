@@ -1,56 +1,39 @@
-from flask import Flask, request, render_template, send_file
-from openai import OpenAI
+from flask import Flask, render_template, request, redirect, url_for
 import openai
-import requests
-from io import BytesIO
-import os
 
-# Set your OpenAI API Key here
 app = Flask(__name__)
-os.environ["OPENAI_API_KEY"] = "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"
-client = openai.OpenAI()
+
+# Load your OpenAI API key (hardcoded for testing purposes)
+openai_api_key = "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"
+
 def generate_image(prompt):
-    try:
-        response = client.images.generate(
-            model="dall-e-3",
-            prompt=prompt,
-            n=1,
-            size="1024x1024"
-        )
-        return response
-    except Exception as e:
-        print(f"Error generating image: {e}")
-        return None
+    client = openai.OpenAI(api_key=openai_api_key)
 
+    response = client.images.generate(
+        model="dall-e-3",
+        prompt=prompt,
+        size="1024x1024",
+        quality="standard",
+        n=1,
+    )
 
-def download_image(image_url):
-    response = requests.get(image_url)
-    if response.status_code == 200:
-        return BytesIO(response.content)
-    return None
+    return response.data[0].url
 
 @app.route('/', methods=['GET', 'POST'])
-def main():
-    image_url = None  # Initialize with no image URL
+def index():
     if request.method == 'POST':
-        prompt = request.form['prompt']
-        if prompt:
-            response = generate_image(prompt)
-            if response and 'data' in response and len(response['data']) > 0:
-                image_url = response['data'][0]['url']
-            else:
-                return 'Failed to generate image. Please try again.', 400
-    # Pass the image URL (or None if not available) to the template
-    return render_template('index.html', image_url=image_url)
+        prompt = request.form.get('prompt')
 
-@app.route('/download-image')
-def download():
-    image_url = request.args.get('image_url')
-    if image_url:
-        image_buffer = download_image(image_url)
-        if image_buffer:
-            return send_file(image_buffer, attachment_filename="generated_image.png", as_attachment=True, mimetype='image/png')
-    return "Failed to download image.", 400
+        if prompt:
+            image_url = generate_image(prompt)
+            if image_url:
+                return render_template('index.html', image_url=image_url)
+            else:
+                return render_template('index.html', error='Failed to generate image. Please try again.')
+        else:
+            return render_template('index.html', error='Please enter a description.')
+
+    return render_template('index.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

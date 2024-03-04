@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Image using DALL-E 3</title>
+</head>
+<body style="background-image: url('https://images.pexels.com/photos/6847584/pexels-photo-6847584.jpeg'); background-size: cover;">
+    <div style="width: 80%; margin: auto;">
+        <h1>Text to Image using DALL-E 3</h1>
+        <form method="POST" action="{{ url_for('index') }}">
+            <div style="float: left; width: 70%;">
+                <label for="prompt">Enter a description to generate an image:</label>
+                <input type="text" name="prompt" id="prompt" required>
+                <br>
+                {% if error %}
+                    <p style="color: red;">{{ error }}</p>
+                {% endif %}
+            </div>
+            <div style="float: right; width: 25%; margin-top: 24px;">
+                <input type="submit" value="Generate Image">
+            </div>
+        </form>
+        {% if image_url %}
+            <br>
+            <img src="{{ image_url }}" alt="Generated Image" style="width: 100%;">
+        {% endif %}
+    </div>
+    <!-- Add the profile footer HTML here -->
+</body>
+</html>
