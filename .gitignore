@@ -9,5 +9,10 @@
 # folders with name starting with a dot
 .*.swp
 
+# 
 
+*.env
+*.log
+*.joblib
+*.pkl
 
