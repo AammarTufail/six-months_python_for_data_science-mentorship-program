@@ -1,0 +1,7 @@
+docx==0.2.4
+Flask==2.2.5
+matplotlib==3.8.3
+PyPDF2==3.0.1
+python_docx==1.1.0
+Werkzeug==3.0.1
+wordcloud==1.9.3
