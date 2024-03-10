@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h2 class="mb-4">Enter Your Bill Details</h2>
+    <form action="/" method="post">
+        <div class="form-group">
+            <label for="total_bill">Total Bill:</label>
+            <input type="number" class="form-control" id="total_bill" name="total_bill" step="0.01" required>
+        </div>
+        <div class="form-group">
+            <label for="size">Size:</label>
+            <input type="number" class="form-control" id="size" name="size" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Calculate Tip</button>
+    </form>
+</div>
+<!-- Optional JavaScript and Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

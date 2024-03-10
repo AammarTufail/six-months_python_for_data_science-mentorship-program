@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text to Speech Converter</title>
+</head>
+<body>
+    <h1>🔊 Text to Speech Converter 📝</h1>
+    <img src="https://www.piecex.com/product_image/20190625044028-00000544-image2.png" alt="Text to Speech">
+    <p>
+        This app converts text to speech using OpenAI's tts-1 or tts-1-hd model.
+        Please enter your OpenAI API key. <b>Do not share your API key with others.</b>
+    </p>
+    <form action="{{ url_for('convert') }}" method="POST">
+        <label for="text">Enter text to convert to speech:</label><br>
+        <textarea name="text" rows="4" cols="50">Hello, welcome to our text to speech converter!</textarea><br>
+        <label for="model">Select Model:</label>
+        <select name="model">
+            <option value="tts-1">tts-1</option>
+            <option value="tts-1-hd">tts-1-hd</option>
+        </select><br>
+        <label for="voice">Select Voice:</label>
+        <select name="voice">
+            <option value="alloy">alloy</option>
+            <option value="echo">echo</option>
+            <option value="fable">fable</option>
+            <option value="onyx">onyx</option>
+            <option value="nova">nova</option>
+            <option value="shimmer">shimmer</option>
+        </select><br>
+        <label for="format">Select Format:</label>
+        <select name="format">
+            <option value="mp3">mp3</option>
+            <option value="opus">opus</option>
+            <option value="aac">aac</option>
+            <option value="flac">flac</option>
+            <option value="wav">wav</option>
+        </select><br>
+        <input type="submit" value="Convert">
+    </form>
+</body>
+</html>

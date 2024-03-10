@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>display results</title>
+    <style>
+    h1 {
+	margin: 1em 0 0.5em 0;
+	color: #343434;
+	font-weight: normal;
+	font-family: 'Ultra', sans-serif;
+	font-size: 36px;
+	line-height: 42px;
+	text-transform: uppercase;
+	text-shadow: 0 2px white, 0 3px #777;
+	text-align: center;
+}
+
+h2 {
+	margin: 1em 0 0.5em 0;
+	color: #343434;
+	font-weight: normal;
+	font-size: 30px;
+	line-height: 40px;
+	font-family: 'Orienta', sans-serif;
+	text-align: center;
+}
+
+h3 {
+	margin: 1em 0 0.5em 0;
+	color: #343434;
+	font-size: 22px;
+	line-height: 40px;
+	font-weight: normal;
+	text-transform: uppercase;
+	font-family: 'Orienta', sans-serif;
+	letter-spacing: 1px;
+	font-style: italic;
+}
+
+    </style>
+</head>
+<body>
+<h1>DIABETES PREDICTION</h1>
+<h3>Pregnancy Value : {{ preg }}</h3>
+<h3>Blood Pressure Value : {{ bp }}</h3>
+<h3>Glucose Levels : {{ gluc }}</h3>
+<h3>Skin Thickness : {{ st }}</h3>
+<h3>Insulin Levels : {{ ins }}</h3>
+<h3>BMI : {{ bmi }}</h3>
+<h3>DiabetesPedigreeFunction : {{ dbf }}</h3>
+<h3>Age : {{ age }}</h3>
+
+<div class="prediction">
+    <h2>Diabetes Prediction : {{ res }}</h2>
+
+</div>
+</body>
+</html>

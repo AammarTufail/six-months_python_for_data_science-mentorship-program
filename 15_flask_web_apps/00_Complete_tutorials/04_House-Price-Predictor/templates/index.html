@@ -1,0 +1,53 @@
+<html>
+<head>
+<style>
+.button {
+background-color: #23b83c;
+	border: 2px solid #020353;
+	color: whitesmoke;
+	padding: 0.5em 0.5em;
+	text-align: center;
+	text-decoration: none;
+	font-size: 1em;
+	display: inline-block;
+	width: 18%;
+	border-radius: 5px;
+	box-shadow: 3px 3px 8px 0 #000; 
+}
+body {
+  background-image: url("{{url_for('static', filename='background.jpg')}}");
+  background-repeat: no-repeat;
+ background-size: 100% 100%;
+}
+h1{
+   background-color: Green;
+  color: white;
+}
+h3{
+   background-color: green;
+  color: white;
+}
+
+
+</style>
+</head>
+<body>
+<center>
+
+
+<h1>Predict House Price</h1>
+<pre>
+<form action="{{ url_for('predict')}}"method="post">
+
+<input type='text' name="area" placeholder="Area in sq. ft" required="required"/>
+
+
+<button type="submit" class="button">Predict Price</button>
+</form>
+<textarea>
+{{prediction_text}}
+</textarea>
+</pre>
+</center>
+</body>
+</html>
