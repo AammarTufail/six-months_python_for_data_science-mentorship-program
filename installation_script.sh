@@ -17,7 +17,10 @@ conda install -c "nvidia/label/cuda-12.2.0" cuda-nvcc -y
 conda install -c anaconda cudatoolkit -y
 conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia -y
 pip install numpy matplotlib seaborn scipy plotly scikit-learn openpyxl langchain streamlit openai huggingface_hub transformers ipykernel
-
+#check gpu
+import torch
+print(torch.cuda.is_available())
+print(torch.cuda.get_device_name(0))  # 0 corresponds to the first GPU
 
 # links
 https://medium.com/nerd-for-tech/installing-tensorflow-with-gpu-acceleration-on-linux-f3f55dd15a9
