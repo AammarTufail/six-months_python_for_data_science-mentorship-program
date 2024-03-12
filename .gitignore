@@ -22,6 +22,9 @@ __pycache__/
 *.joblib
 *.pkl
 
+#ignore .vscode dir
+/.vscode/
+
 
 
 
