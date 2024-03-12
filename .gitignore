@@ -22,8 +22,10 @@ __pycache__/
 *.joblib
 *.pkl
 
-#ignore .vscode dir
-/.vscode/
+# add files and folders starting with .
+.*
+*.*
+
 
 
 
