@@ -9,10 +9,20 @@
 # folders with name starting with a dot
 .*.swp
 
+# ignore all files starting with a dot
+.*
+
+# ignore pycache folders
+__pycache__/
+
+
+
 # 
 
 *.env
 *.log
 *.joblib
 *.pkl
+*.DS_Store
+
 
