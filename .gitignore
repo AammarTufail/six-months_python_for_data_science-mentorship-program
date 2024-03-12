@@ -15,6 +15,16 @@
 # ignore pycache folders
 __pycache__/
 
+# ignore .DS_Store files
+.DS_Store
+
+# ignore .joblib files
+*.joblib
+*.pkl
+
+
+
+
 
 
 # 
