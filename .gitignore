@@ -9,9 +9,39 @@
 # folders with name starting with a dot
 .*.swp
 
+# ignore all files starting with a dot
+.*
+
+# ignore pycache folders
+*/__pycache__/
+
+# ignore .DS_Store files
+*.DS_Store
+
+# ignore .joblib files
+*.joblib
+*.pkl
+
+# add files and folders starting with .
+.*
+*.*
+
+
+
+
+
+
+
+# 
+
+*.env
+*.log
+*.joblib
+*.pkl
+*.DS_Store
 
 
 .DS_Store
 .DS_Store
 15_flask_web_apps/.DS_Store
-15_flask_web_apps/00_Complete_tutorials/.DS_Store
+.DS_Store

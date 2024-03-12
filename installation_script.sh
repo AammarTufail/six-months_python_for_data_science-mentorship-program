@@ -51,7 +51,7 @@ mamba activate torch_gpu
 mamba install python=3.8
 mamba install pytorch::pytorch torchvision torchaudio -c pytorch -y
 mamba install jupyter pandas numpy matplotlib scikit-learn tqdm -y
-pip insytall ipykernel
+pip install ipykernel
 
 #test pytorch
 import torch

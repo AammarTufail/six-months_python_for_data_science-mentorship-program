@@ -1,0 +1,7 @@
+lida
+lida[transformers]
+torch
+streamlit
+openai
+python-dotenv
+llmx
