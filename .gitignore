@@ -22,9 +22,9 @@
 *.joblib
 *.pkl
 
-# add files and folders starting with .
-.*
-*.*
+# # add files and folders starting with .
+# .*
+# *.*
 
 
 
