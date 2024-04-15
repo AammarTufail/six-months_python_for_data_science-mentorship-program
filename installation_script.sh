@@ -1,3 +1,7 @@
+# install miniconda
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash Miniconda3-latest-Linux-x86_64.sh
+
 # install tensorflow in linux  with nvidia
 conda create -n tf_env -y
 conda activate tf_env
