@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Word Cloud Generator</title>
+</head>
+<body>
+  <h1>Upload a file to generate a word cloud</h1>
+  <form action="/" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" required><br>
+    <label for="format">Choose a format:</label>
+    <select name="format" id="format">
+      <option value="png">PNG</option>
+      <option value="jpg">JPG</option>
+    </select><br>
+    <input type="submit" value="Generate Word Cloud">
+  </form>
+</body>
+</html>

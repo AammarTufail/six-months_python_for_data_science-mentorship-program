@@ -1,0 +1,9 @@
+docx==0.2.4
+matplotlib==3.8.3
+numpy==1.26.4
+pandas==2.2.1
+plotly==5.19.0
+PyPDF2==3.0.1
+python_docx==0.8.11
+streamlit==1.31.1
+wordcloud==1.9.3
