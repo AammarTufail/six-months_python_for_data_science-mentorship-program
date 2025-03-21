@@ -17,6 +17,8 @@
 
 # ignore .DS_Store files
 *.DS_Store
+.DS_Store
+
 
 # ignore .joblib files
 *.joblib
@@ -45,3 +47,5 @@
 .DS_Store
 15_flask_web_apps/.DS_Store
 .DS_Store
+13_streamlit/.DS_Store
+13_streamlit/12_text_to_speech/.DS_Store
